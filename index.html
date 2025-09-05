@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPTs para Marketing Digital</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            color: white;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .gpts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .gpt-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .gpt-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .gpt-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4);
+            background-size: 300% 100%;
+            animation: gradientShift 3s ease infinite;
+        }
+
+        .gpt-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .gpt-card:hover .gpt-icon {
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        .gpt-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .gpt-description {
+            font-size: 0.95rem;
+            color: #7f8c8d;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .gpt-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .gpt-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .gpt-button:hover::before {
+            left: 100%;
+        }
+
+        .gpt-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Delay das animações para efeito cascata */
+        .gpt-card:nth-child(1) { animation-delay: 0.1s; }
+        .gpt-card:nth-child(2) { animation-delay: 0.2s; }
+        .gpt-card:nth-child(3) { animation-delay: 0.3s; }
+        .gpt-card:nth-child(4) { animation-delay: 0.4s; }
+        .gpt-card:nth-child(5) { animation-delay: 0.5s; }
+        .gpt-card:nth-child(6) { animation-delay: 0.6s; }
+        .gpt-card:nth-child(7) { animation-delay: 0.7s; }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .gpts-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .gpt-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 GPTs Marketing Digital</h1>
+            <p>Ferramentas de IA especializadas para turbinar suas estratégias de marketing. Clique e acesse diretamente cada GPT personalizado.</p>
+        </div>
+
+        <div class="gpts-grid">
+            <div class="gpt-card">
+                <div class="gpt-icon">🎯</div>
+                <h3 class="gpt-title">AIDA</h3>
+                <p class="gpt-description">Crie campanhas persuasivas usando a fórmula AIDA (Atenção, Interesse, Desejo, Ação). Ideal para anúncios e landing pages que convertem.</p>
+                <a href="https://chatgpt.com/g/g-68af939667748191a90ce31b0a2d8dec-aida" target="_blank" class="gpt-button">Acessar AIDA</a>
+            </div>
+
+            <div class="gpt-card">
+                <div class="gpt-icon">📖</div>
+                <h3 class="gpt-title">StoryBrand</h3>
+                <p class="gpt-description">Desenvolva narrativas poderosas para sua marca usando a metodologia StoryBrand. Conecte-se com seu público através de histórias envolventes.</p>
+                <a href="https://chatgpt.com/g/g-68af9f2864dc819182ac9173e4b91e26-storybrand" target="_blank" class="gpt-button">Acessar StoryBrand</a>
+            </div>
+
+            <div class="gpt-card">
+                <div class="gpt-icon">🧠</div>
+                <h3 class="gpt-title">Hooks Psicológicos</h3>
+                <p class="gpt-description">Crie ganchos mentais irresistíveis que capturam a atenção do seu público. Baseado em princípios de psicologia do consumidor.</p>
+                <a href="https://chatgpt.com/g/g-68afa458e96c8191a51ed9cf98c6ac33-hooks-psicologicos" target="_blank" class="gpt-button">Acessar Hooks</a>
+            </div>
+
+            <div class="gpt-card">
+                <div class="gpt-icon">✍️</div>
+                <h3 class="gpt-title">Copy Eugene Schwartz</h3>
+                <p class="gpt-description">Escreva textos persuasivos no estilo do lendário Eugene Schwartz. Domine as técnicas do maior copywriter da história.</p>
+                <a href="https://chatgpt.com/g/g-689bb4ca093c81919f05b39ec3f94570-crie-copy-como-eugene-m-schwartz" target="_blank" class="gpt-button">Acessar Copy</a>
+            </div>
+
+            <div class="gpt-card">
+                <div class="gpt-icon">🔍</div>
+                <h3 class="gpt-title">Criador de Pesquisas</h3>
+                <p class="gpt-description">Desenvolva pesquisas estratégicas para entender seu mercado e público-alvo. Colete dados valiosos para suas campanhas.</p>
+                <a href="https://chatgpt.com/g/g-68afa1d8627c819187d9eae7fb5c3523-criador-de-pesquisas" target="_blank" class="gpt-button">Acessar Pesquisas</a>
+            </div>
+
+            <div class="gpt-card">
+                <div class="gpt-icon">🏆</div>
+                <h3 class="gpt-title">Análise Competitiva</h3>
+                <p class="gpt-description">Analise seus concorrentes de forma profunda e estratégica. Identifique oportunidades e gaps no mercado.</p>
+                <a href="https://chatgpt.com/g/g-68afaf2451f881918cd4763543be400f-analise-competitiva" target="_blank" class="gpt-button">Acessar Análise</a>
+            </div>
+
+            <div class="gpt-card">
+                <div class="gpt-icon">📱</div>
+                <h3 class="gpt-title">Estrategista de Conteúdo</h3>
+                <p class="gpt-description">Planeje e crie conteúdo estratégico para suas redes sociais. Gere posts que engajam e convertem seguidores em clientes.</p>
+                <a href="https://chatgpt.com/g/g-68b89aa597c48191ba7bd31c39d5f464-estrategista-de-conteudo-para-posts" target="_blank" class="gpt-button">Acessar Conteúdo</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>💡 Maximize seus resultados em marketing digital com essas ferramentas especializadas de IA</p>
+        </div>
+    </div>
+
+    <script>
+        // Adiciona efeito de parallax suave ao scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('body');
+            const speed = scrolled * 0.5;
+            parallax.style.backgroundPosition = `center ${speed}px`;
+        });
+
+        // Adiciona animação de entrada mais suave
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.gpt-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+            
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
